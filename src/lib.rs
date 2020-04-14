@@ -1,8 +1,11 @@
-//! For when you just want a literal.
+//! When you literally just want a literal of the `std::collections` types.
 
 /// Literally just a HashMap literal with keys and values into'd.
 /// ```rust
-/// let m = HashMap<String, String> = hmap!{ "key" => "value" };
+/// # use std::collections::HashMap;
+/// # use literally::hmap;
+/// let m: HashMap<String, String> = hmap!{ "key" => "value" };
+/// assert_eq!(m.get("key"), Some(&"value".to_string()))
 /// ```
 ///
 #[macro_export(local_inner_macros)]
@@ -12,7 +15,7 @@ macro_rules! hmap {
 
     ($($key:expr => $value:expr),* $(,)?) => {
         {
-            let _cap = map!(@count $($key),*);
+            let _cap = hmap!(@count $($key),*);
             let mut _map = ::std::collections::HashMap::with_capacity(_cap);
             $(
                 let _ = _map.insert($key.into(), $value.into());
@@ -24,7 +27,10 @@ macro_rules! hmap {
 
 /// Literally just a HashSet literal with values into'd.
 /// ```rust
-/// let s = HashSet<String> = hset!{ "value" };
+/// # use std::collections::HashSet;
+/// # use literally::hset;
+/// let s: HashSet<String> = hset!{ "value" };
+/// assert_eq!(s.get("value"), Some(&"value".to_string()))
 /// ```
 ///
 #[macro_export(local_inner_macros)]
@@ -47,7 +53,10 @@ macro_rules! hset {
 
 /// Literally just a BTreeMap literal with keys and values into'd.
 /// ```rust
-/// let m = BTreeMap<String, String> = bmap!{ "key" => "value" };
+/// # use std::collections::BTreeMap;
+/// # use literally::bmap;
+/// let m: BTreeMap<String, String> = bmap!{ "key" => "value" };
+/// assert_eq!(m.get("key"), Some(&"value".to_string()))
 /// ```
 ///
 #[macro_export(local_inner_macros)]
@@ -65,20 +74,80 @@ macro_rules! bmap {
 
 /// Literally just a HashSet literal with values into'd.
 /// ```rust
-/// let s = BTreeSet<String> = bset!{ "value" };
+/// # use std::collections::BTreeSet;
+/// # use literally::bset;
+/// let s: BTreeSet<String> = bset!{ "value" };
+/// assert_eq!(s.get("value"), Some(&"value".to_string()))
 /// ```
 ///
 #[macro_export(local_inner_macros)]
 macro_rules! bset {
-    ($($key:expr,)+) => (btreeset!($($key),+));
-
-    ( $($key:expr),* ) => {
+    ( $($key:expr),* $(,)? ) => {
         {
             let mut _set = ::std::collections::BTreeSet::new();
             $(
                 _set.insert($key.into());
             )*
             _set
+        }
+    };
+}
+
+/// Literally just a HashSet literal with values into'd.
+/// ```rust
+/// # use std::collections::VecDeque;
+/// # use literally::vecd;
+/// let s: VecDeque<String> = vecd![ "value" ];
+/// assert_eq!(s.get(0), Some(&"value".to_string()))
+/// ```
+///
+#[macro_export(local_inner_macros)]
+macro_rules! vecd {
+    ( $($key:expr),* $(,)? ) => {
+        ::std::collections::VecDeque::from(::std::vec![$(
+            $key.into()
+        ),*])
+    }
+}
+
+/// Literally just a HashSet literal with values into'd.
+/// ```rust
+/// # use std::collections::LinkedList;
+/// # use literally::list;
+/// let l: LinkedList<String> = list![ "value" ];
+/// assert_eq!(l.front(), Some(&"value".to_string()))
+/// ```
+///
+#[macro_export(local_inner_macros)]
+macro_rules! list {
+    ( $($key:expr),* $(,)? ) => {
+        {
+            let mut _lst = ::std::collections::LinkedList::new();
+            $(
+                _lst.push_back($key.into());
+            )*
+            _lst
+        }
+    };
+}
+
+/// Literally just a HashSet literal with values into'd.
+/// ```rust
+/// # use std::collections::BinaryHeap;
+/// # use literally::heap;
+/// let l: BinaryHeap<String> = heap![ "value" ];
+/// assert_eq!(l.peek(), Some(&"value".to_string()))
+/// ```
+///
+#[macro_export(local_inner_macros)]
+macro_rules! heap {
+    ( $($key:expr),* $(,)? ) => {
+        {
+            let mut _heap = ::std::collections::BinaryHeap::new();
+            $(
+                _heap.push($key.into());
+            )*
+            _heap
         }
     };
 }
