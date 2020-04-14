@@ -1,7 +1,9 @@
 [package]
 name = "literally"
 version = "0.1.0"
+license = "MIT/Apache-2.0"
 authors = ["Evan Simmons <esims89@gmail.com>"]
+description = "Macro literals for members of std::collections"
 edition = "2018"
 
 [dependencies]
