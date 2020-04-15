@@ -37,7 +37,7 @@ Licensed under either of the following at your option.
 
 ### Credit
 
-Like I said this *is* `maplit` with ergonomics changes, all credit should be directed there. Again, I literally copied and pasted the code from `maplit` and changed the ergonomics ever so slightly.
+Like I said, this *is* `maplit` but with ergonomics changes. All credit should be directed there. Again, I literally copied and pasted the code from `maplit` and changed the ergonomics slightly.
 
 ## Contribution
 
