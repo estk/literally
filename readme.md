@@ -6,7 +6,7 @@
 ![CI](https://github.com/estk/literally/workflows/CI/badge.svg)
 [![Minimum rustc version](https://img.shields.io/badge/rustc-1.38+-green.svg)](https://github.com/estk/literally#rust-version-requirements)
 
-I found the methods and ergonomics of `maplit` agravating so I made this. Its basically the same aside from the names and here all values are `.into()`'d.
+I found the methods and ergonomics of [`maplit`](#credit) aggravating so I made this. It's basically the same code except that the names are different and the values are  `.into()`'d.
 
 Enjoy.
 
@@ -30,13 +30,16 @@ assert_eq!(m.get("key").unwrap().get("value"), Some(&"value".to_string()))
 
 ## License
 
-Licensed under either of
- * Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+Licensed under either of the following at your option.
 
-at your option.
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-### Contribution
+### Credit
+
+Like I said this *is* `maplit` with ergonomics changes, all credit should be directed there. Again, I literally copied and pasted the code from `maplit` and changed the ergonomics ever so slightly.
+
+## Contribution
 
 Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you shall be dual licensed as above, without any
