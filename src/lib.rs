@@ -72,7 +72,7 @@ macro_rules! bmap {
     };
 }
 
-/// Literally just a HashSet literal with values into'd.
+/// Literally just a BTreeSet literal with values into'd.
 /// ```rust
 /// # use std::collections::BTreeSet;
 /// # use literally::bset;
@@ -93,7 +93,7 @@ macro_rules! bset {
     };
 }
 
-/// Literally just a HashSet literal with values into'd.
+/// Literally just a VecDeque literal with values into'd.
 /// ```rust
 /// # use std::collections::VecDeque;
 /// # use literally::vecd;
@@ -110,7 +110,7 @@ macro_rules! vecd {
     }
 }
 
-/// Literally just a HashSet literal with values into'd.
+/// Literally just a LinkedList literal with values into'd.
 /// ```rust
 /// # use std::collections::LinkedList;
 /// # use literally::list;
@@ -131,7 +131,7 @@ macro_rules! list {
     };
 }
 
-/// Literally just a HashSet literal with values into'd.
+/// Literally just a BinaryHeap literal with values into'd.
 /// ```rust
 /// # use std::collections::BinaryHeap;
 /// # use literally::heap;
