@@ -10,6 +10,19 @@ I found the methods and ergonomics of `maplit` agravating so I made this. Its ba
 
 Enjoy.
 
+## Example
+
+```rust
+use std::collections::{HashMap, HashSet};
+use literally::{hmap, hset};
+let m: HashMap<String, HashSet<String>> = hmap!{ 
+    "key" => hset!{
+        "value"
+    }
+};
+assert_eq!(m.get("key").unwrap().get("value"), Some(&"value".to_string()))
+ ```
+
 
 ## Rust Version Requirements
 
