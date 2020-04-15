@@ -1,6 +1,6 @@
 [package]
 name = "literally"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT/Apache-2.0"
 authors = ["Evan Simmons <esims89@gmail.com>"]
 description = "Macro literals for members of std::collections"
