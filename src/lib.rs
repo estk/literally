@@ -3,7 +3,7 @@
 //! ```rust
 //! # use std::collections::{HashMap, HashSet};
 //! # use literally::{hmap, hset};
-//! let m: HashMap<String, HashSet<String>> = hmap!{ 
+//! let m: HashMap<String, HashSet<String>> = hmap!{
 //!     "key" => hset!{
 //!         "value"
 //!     }
