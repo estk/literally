@@ -1,8 +1,8 @@
 [package]
 name = "literally"
-version = "0.1.2"
+version = "0.1.3"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/estk/log4rs"
+repository = "https://github.com/estk/literally"
 authors = ["Evan Simmons <esims89@gmail.com>"]
 description = "Macro literals for members of std::collections"
 edition = "2018"
