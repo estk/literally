@@ -1,6 +1,6 @@
 [package]
 name = "literally"
-version = "0.1.1"
+version = "0.1.2"
 license = "MIT/Apache-2.0"
 repository = "https://github.com/estk/log4rs"
 authors = ["Evan Simmons <esims89@gmail.com>"]
